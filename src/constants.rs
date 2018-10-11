@@ -82,6 +82,10 @@ bitflags!(
         ///
         /// `0.1.0`
         const SEMVER_FROM_CARGO_PKG  = 0b0010_0000_0000;
+
+        /// Generate the semver constant from `git describe --tags `git rev-list --tags --max-count=1``.
+        /// `0.1.0`
+        const SEMVER_LATEST_TAG = 0b0100_0000_0000;
     }
 );
 
@@ -106,6 +110,8 @@ pub const SEMVER_NAME: &str = "VERGEN_SEMVER";
 pub const SEMVER_COMMENT: &str = "/// Semver";
 pub const SEMVER_TAGS_NAME: &str = "VERGEN_SEMVER_LIGHTWEIGHT";
 pub const SEMVER_TAGS_COMMENT: &str = "/// Semver (Lightweight)";
+pub const SEMVER_LATEST_TAG_NAME: &str = "VERGEN_SEMVER_LATEST_TAG";
+pub const SEMVER_LATEST_TAG_COMMENT: &str = "/// Semver (Latest tag)";
 
 #[cfg(test)]
 mod test {

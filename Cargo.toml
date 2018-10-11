@@ -1,3 +1,4 @@
+cargo-features = ["edition"]
 [package]
 authors = ["Jason Ozias <jason.g.ozias@gmail.com>"]
 description = "Generate version related functions"
