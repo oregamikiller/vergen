@@ -7,7 +7,7 @@
 // modified, or distributed except according to those terms.
 
 //! Output types
-use chrono::Utc;
+use chrono::prelude::*;
 use crate::constants::*;
 use failure::Fallible;
 use std::collections::HashMap;
@@ -19,7 +19,7 @@ pub mod envvar;
 
 pub fn generate_build_info(flags: ConstantsFlags) -> Fallible<HashMap<VergenKey, String>> {
     let mut build_info = HashMap::new();
-    let now = Utc::now();
+    let now = UTC::now();
 
     if flags.contains(ConstantsFlags::BUILD_TIMESTAMP) {
         build_info.insert(VergenKey::BuildTimestamp, now.to_rfc3339());
